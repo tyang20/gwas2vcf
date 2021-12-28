@@ -10,7 +10,7 @@ class PvalueHandler:
         decimal.getcontext().Emax = 10000000
         # values to remember
         self.minimum_value_str = "0"
-        self.maximum_value_str = "1"
+        self.maximum_value_str = "2000"
         self.minimum_value = decimal.Decimal(self.minimum_value_str)
         self.maximum_value = decimal.Decimal(self.maximum_value_str)
         self.field_name = "p-values"
@@ -38,4 +38,4 @@ class PvalueHandler:
         # prevent Inf output
         if p_value == self.minimum_value:
             return 999
-        return float(-p_value.log10())
+        return float(p_value)
